@@ -1,0 +1,28 @@
+# Environment Python
+__pycache__/
+venv/
+env/
+.env
+
+# Dataset dan Citra 
+dataset/
+data/
+*.raw
+*.dng
+*.jpg
+*.png
+
+# Model Machine Learning
+*.pkl
+*.h5
+*.joblib
+
+# Mengabaikan Virtual Environment TA
+ta-env/
+
+# Mengabaikan Folder Arsip dan Zip
+Arsip/
+*.zip
+
+# Mengabaikan Model Weights yang berat
+models/weights/
