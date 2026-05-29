@@ -11,7 +11,7 @@ from scripts.hb_predict import load_hb_model, predict_hemoglobin
 def main():
     weights_path = r"C:\Folder Dzakwan\Folder Dzakwan\Keperluan TA\models\weights\simulasi\model_simulasi_terbaik.keras"
     image_path = r"C:\Folder Dzakwan\Folder Dzakwan\Keperluan TA\dataset\Dataset Eyedefy\India\8\20200124_202947.jpg"
-    hb_model_path = r"C:\Folder Dzakwan\Folder Dzakwan\Keperluan TA\models\weights\hb_model_normal_only.pkl"
+    hb_model_path = r"C:\Folder Dzakwan\Folder Dzakwan\Keperluan TA\models\weights\hb_model.pkl"
 
     # ini disesuain
     patient_age = 32
@@ -51,17 +51,17 @@ def main():
 
     plt.subplot(1, 3, 1)
     plt.imshow(img_rgb)
-    plt.title("Gambar Input")
+    plt.title("Image Input")
     plt.axis('off')
 
     plt.subplot(1, 3, 2)
     plt.imshow(mask_2d, cmap='gray') 
-    plt.title("Prediksi Mask (UNBCSM)")
+    plt.title("Predicted Mask Result")
     plt.axis('off')
 
     plt.subplot(1, 3, 3)
     plt.imshow(roi_image)
-    plt.title(f"Hasil Potongan (ROI)\nPrediksi Hb: {hb_prediction:.2f} g/dL")
+    plt.title(f"Overlay ROI\nPredicted Hb Value: {hb_prediction:.2f} g/dL")
     plt.axis('off')
 
     plt.tight_layout()

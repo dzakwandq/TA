@@ -284,3 +284,32 @@ def read_image(model, image_path):
     gray_img = cv2.cvtColor((blended1 * 255).astype(np.uint8), cv2.COLOR_BGR2GRAY)
 
     return image, gray_img, thresholded_prediction[0], blended2
+
+def read_image2(model, image_path):
+    SIZE_X = 512
+    SIZE_Y = 682
+
+    image = cv2.imread(image_path, cv2.IMREAD_COLOR)
+    image = cv2.resize(image, (SIZE_X, SIZE_Y))
+    
+    # PERBAIKAN 1: Konversi BGR ke RGB (karena cv2 membaca BGR)
+    image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+
+    # PERBAIKAN 2: Normalisasi 0-1 sebelum masuk ke model
+    img_normalized = image.astype(np.float32) / 255.0
+    
+    # Prediksi menggunakan gambar yang sudah dinormalisasi
+    prediction = model.predict(np.expand_dims(img_normalized, axis=0))
+
+    thresholded_prediction = (prediction > 0.5).astype(np.uint8)
+    thresholded_prediction2 = np.squeeze(thresholded_prediction, axis=0)
+
+    mask2 = np.stack((thresholded_prediction2,)*3, axis=-1)
+    mask2 = np.squeeze(mask2, axis=2)
+    
+    img = image / 255.0
+    blended1 = img * mask2
+    blended2 = (blended1 * 255).astype(np.uint8)
+    gray_img = cv2.cvtColor((blended1 * 255).astype(np.uint8), cv2.COLOR_RGB2GRAY) # Sesuaikan dengan RGB
+
+    return image, gray_img, thresholded_prediction[0], blended2

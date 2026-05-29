@@ -1,8 +1,7 @@
 from load_model_TA import loadmodel2, read_image
 
-
 # path model hasil training (ganti sesuai punya kamu)
-model_path = r'C:\Folder Dzakwan\Folder Dzakwan\Keperluan TA\models\weights\simulasi\model_simulasi_terbaik.keras'
+model_path = r'C:\Folder Dzakwan\Folder Dzakwan\Keperluan TA\models\weights\model_v8_1.h5'
 
 # load model (bangun arsitektur + muat bobot)
 model = loadmodel2(model_path)

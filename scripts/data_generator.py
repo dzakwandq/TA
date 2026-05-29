@@ -74,7 +74,7 @@ class ConjunctivaDataGenerator(tf.keras.utils.Sequence):
 # =========================================================================
 if __name__ == "__main__":
     # Misalkan ini adalah daftar file kamu dari folder dataset
-    list_train_images = ['img1.jpg', 'img2.jpg'] # Contoh saja
+    list_train_images = ['img1.jpg', 'img2.jpg'] #exp
     list_train_masks = ['mask1.png', 'mask2.png']
     
     list_val_images = ['img3.jpg', 'img4.jpg']
@@ -89,7 +89,7 @@ if __name__ == "__main__":
     )
     
     # 2. Buat Generator untuk Validation (Augmentasi = FALSE)
-    # Aturan emas: Data validasi/testing TIDAK BOLEH diaugmentasi
+    # Data Validasi tidak di augmentasi
     val_generator = ConjunctivaDataGenerator(
         list_val_images, 
         list_val_masks, 
