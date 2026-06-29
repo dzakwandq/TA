@@ -14,7 +14,7 @@ from sklearn.preprocessing import PolynomialFeatures
 # Gunakan r"..." (raw string) agar Windows tidak salah membaca backslash (\)
 BASE_GAMBAR = r"C:\Folder Dzakwan\Folder Dzakwan\Keperluan TA\dataset\Hasil Pengambilan Data\Hasil Gambar"
 BASE_GT = r"C:\Folder Dzakwan\Folder Dzakwan\Keperluan TA\dataset\Hasil Pengambilan Data\Ground Truth"
-OUTPUT_EXCEL = r"C:\Folder Dzakwan\Folder Dzakwan\Keperluan TA\dataset\hasil_ekstraksi_fitur_primer2.xlsx"
+OUTPUT_EXCEL = r"C:\Folder Dzakwan\Folder Dzakwan\Keperluan TA\dataset\primary_dataset_features.xlsx"
 
 # Konfigurasi Path untuk modul custom Anda
 JALUR_UTAMA = r'C:\Folder Dzakwan\Folder Dzakwan\Keperluan TA'
